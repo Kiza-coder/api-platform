@@ -66,4 +66,21 @@ class BlogController extends AbstractController
             self::POSTS[array_search($slug, array_column(self::POSTS,'slug'))]
         );
     }
+
+    /**
+     * @Route("/add", name="blo g_add", methods={"POST"})
+     */
+    public function add(Request $request)
+    {
+        /**@var Serializer $serializer */
+        $serializer = $this->get('serializer');
+
+        $blogPost = $serializer->deserialize($request->getContent(),BlogPost::class,'json');
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($blogPost);
+        $em->flush();
+
+        return $this->json($blogPost);
+    }
 }
