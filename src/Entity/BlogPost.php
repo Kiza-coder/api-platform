@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\BlogPostRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\BlogPostRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=BlogPostRepository::class)
+ * @ApiResource()
  */
 class BlogPost
 {
