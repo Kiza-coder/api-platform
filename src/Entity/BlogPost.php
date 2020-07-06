@@ -49,7 +49,7 @@ class BlogPost
     private $slug;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Commment", mappedBy="blogPost")
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="blogPost")
      */
     private $comments;
 
@@ -57,7 +57,6 @@ class BlogPost
     {
         $this->comments = new ArrayCollection();
     }
-
 
     public function getId(): ?int
     {
