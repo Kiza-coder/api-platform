@@ -13,10 +13,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ApiResource( 
  *      itemOperations={"get"},
- *      collectionOperations={},
- *      normalizationContext={
- *          "groups"={"read"},
- *      }
+ *      collectionOperations={"post"},
+ *      normalizationContext={"groups"={"read"}}
  * )
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
